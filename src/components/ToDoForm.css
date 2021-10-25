@@ -1,0 +1,72 @@
+.form__card {
+  width: 500px;
+  height: 300px;
+  align-items: center;
+  padding: 1.3rem;
+  margin: 1rem 0;
+}
+
+.form__controls {
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 2rem;
+}
+
+.form__control {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  margin: 0.5rem;
+}
+
+input,
+textarea {
+  display: block;
+  width: 100%;
+  font-size: 16px;
+  font-family: "Montserrat";
+  resize: none;
+}
+
+.form__date-time {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  text-align: left;
+}
+
+.form__control label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.form__control input {
+  font: inherit;
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  max-width: 100%;
+}
+
+.form__btn {
+  border: 0;
+  border-radius: 12px;
+  background: #27292b;
+  color: white;
+  font-size: 11px;
+  font-family: "Montserrat";
+  margin: 1rem 0;
+  padding: 0.8rem 1.2rem;
+  width: auto;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: -3px -3px 5px #ffffff70, 3px 3px 14px #00000080;
+  transition: 0.2s;
+  float: right;
+}
+
+.form__btn:hover {
+  box-shadow: -6px -6px 5px #ffffff70, 6px 6px 14px #00000080;
+}

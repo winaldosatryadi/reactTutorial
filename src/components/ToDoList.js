@@ -26,12 +26,6 @@ function ToDoList() {
         todoTime="23.00 - 24.00"
         todoDate={new Date(2021, 0, 25)}
       />
-      <ToDoItem
-        todoActivity={selesai}
-        todoTime="10.00 - 11.00"
-        todoDate={new Date(2021, 0, 23)}
-      />
-      <button onClick={handler}>Selesai</button>;
     </Fragment>
   );
 }
