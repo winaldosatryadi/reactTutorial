@@ -1,7 +1,13 @@
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 import ToDoItem from "./ToDoItem";
 
 function ToDoList() {
+  let todoActivity = "Bersihkan kamar";
+  const [selesai, setSelesai] = useState(todoActivity);
+
+  const handler = () => {
+    setSelesai("SELESAI");
+  };
   return (
     <Fragment>
       <ToDoItem
@@ -20,7 +26,12 @@ function ToDoList() {
         todoTime="23.00 - 24.00"
         todoDate={new Date(2021, 0, 25)}
       />
-      ;
+      <ToDoItem
+        todoActivity={selesai}
+        todoTime="10.00 - 11.00"
+        todoDate={new Date(2021, 0, 23)}
+      />
+      <button onClick={handler}>Selesai</button>;
     </Fragment>
   );
 }
