@@ -5,7 +5,7 @@
   align-items: center;
   padding: 1.3rem;
   margin: 1rem 0;
-  background-color: rgb(37, 45, 53);
+  background-color: #4b4b4b;
 }
 
 .todo-item__description {
@@ -29,8 +29,8 @@
   font-size: 1rem;
   font-weight: bold;
   color: aqua;
-  background-color: rgb(37, 45, 53);
+  background-color: #27292b;
   padding: 0.75rem;
   border-radius: 12px;
-  box-shadow: inset -3px -3px 5px #ffffff, inset 3px 3px 14px #000000;
+  box-shadow: -3px -3px 5px #ffffff70, 3px 3px 14px #00000080;
 }

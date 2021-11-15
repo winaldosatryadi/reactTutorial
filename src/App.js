@@ -2,6 +2,7 @@ import "./App.css";
 import ToDoList from "./components/ToDoList";
 import ToDoForm from "./components/ToDoForm";
 import { useState } from "react";
+import ToDoFilter from "./components/ToDoFilter";
 
 function App() {
   const todoList = [
@@ -33,10 +34,24 @@ function App() {
     });
   };
 
+  const [filteredMonth, setFilteredMonth] = useState("January");
+
+  const filterChangeHandler = (selectedMonth) => {
+    // console.log("selectedMonth: ", selectedMonth);
+    setFilteredMonth(selectedMonth);
+  };
+
+  const filteredToDo = todo.filter((todo) => {
+    return (
+      todo.date.toLocaleString("default", { month: "long" }) === filteredMonth
+    );
+  });
+
   return (
     <div className="App">
       <ToDoForm onAddData={addToDoHandler} />
-      <ToDoList items={todo} />
+      <ToDoFilter onChangeFilter={filterChangeHandler} />
+      <ToDoList items={filteredToDo} />
     </div>
   );
 }
