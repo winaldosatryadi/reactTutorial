@@ -12,18 +12,21 @@ function App() {
       activity: "Belajar React",
       timeStart: "10.00",
       timeEnd: "11.00",
+      id: 1,
     },
     {
       date: new Date(2021, 0, 24),
       activity: "Belajar Math",
       timeStart: "20.00",
       timeEnd: "21.00",
+      id: 2,
     },
     {
       date: new Date(2021, 0, 25),
       activity: "Mandiin kucing",
       timeStart: "23.00",
       timeEnd: "24.00",
+      id: 3,
     },
   ];
 
@@ -48,6 +51,11 @@ function App() {
     );
   });
 
+  const removeTodoHandler = (id) => {
+    const removedArr = [...filteredToDo].filter((todo) => todo.id !== id);
+    setTodo(removedArr);
+  };
+
   return (
     <div className="App">
       <ToDoForm onAddData={addToDoHandler} />
@@ -59,7 +67,7 @@ function App() {
           </p>
         </Card>
       ) : (
-        <ToDoList items={filteredToDo} />
+        <ToDoList items={filteredToDo} onRemove={removeTodoHandler} />
       )}
     </div>
   );

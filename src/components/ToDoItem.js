@@ -2,6 +2,7 @@ import { Date as DateItem } from "./Date";
 
 import "./ToDoItem.css";
 import Card from "./UI/Card";
+import { RiCloseCircleLine } from "react-icons/ri";
 
 function ToDoItem(props) {
   return (
@@ -16,6 +17,15 @@ function ToDoItem(props) {
         <div className="todo-item__time">
           {props.todoTimeStart}-{props.todoTimeEnd}
         </div>
+      </div>
+      <div className="icons">
+        <RiCloseCircleLine
+          className="delete-icon"
+          onClick={() => {
+            console.log("Saya mau menghapus ", props.id);
+            props.onRemove(props.id);
+          }}
+        />
       </div>
     </Card>
   );

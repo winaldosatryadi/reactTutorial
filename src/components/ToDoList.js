@@ -10,6 +10,9 @@ function ToDoList(props) {
           todoTimeStart={todoItem.timeStart}
           todoTimeEnd={todoItem.timeEnd}
           todoDate={todoItem.date}
+          key={todoItem.id}
+          id={todoItem.id}
+          onRemove={props.onRemove}
         />
       ))}
     </Fragment>
