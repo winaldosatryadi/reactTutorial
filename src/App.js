@@ -3,6 +3,7 @@ import ToDoList from "./components/ToDoList";
 import ToDoForm from "./components/ToDoForm";
 import { useState } from "react";
 import ToDoFilter from "./components/ToDoFilter";
+import Card from "./components/UI/Card";
 
 function App() {
   const todoList = [
@@ -51,7 +52,15 @@ function App() {
     <div className="App">
       <ToDoForm onAddData={addToDoHandler} />
       <ToDoFilter onChangeFilter={filterChangeHandler} />
-      <ToDoList items={filteredToDo} />
+      {filteredToDo.length === 0 ? (
+        <Card>
+          <p style={{ color: "#fff", padding: "2rem", textAlign: "center" }}>
+            No To Do Items Found!
+          </p>
+        </Card>
+      ) : (
+        <ToDoList items={filteredToDo} />
+      )}
     </div>
   );
 }
