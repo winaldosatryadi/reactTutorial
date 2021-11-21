@@ -47,6 +47,10 @@
   color: rgba(219, 18, 18, 0.7);
 }
 
+.edit-icon {
+  color: rgba(205, 236, 27, 0.7);
+}
+
 .complete-icon {
   color: rgba(27, 236, 41, 0.7);
 }

@@ -13,6 +13,7 @@ function ToDoList(props) {
           key={todoItem.id}
           id={todoItem.id}
           onRemove={props.onRemove}
+          onEdit={props.onEdit}
           onComplete={props.onComplete}
           isComplete={todoItem.isComplete}
         />

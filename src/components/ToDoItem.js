@@ -2,7 +2,7 @@ import { Date as DateItem } from "./Date";
 
 import "./ToDoItem.css";
 import Card from "./UI/Card";
-// import { RiCloseCircleLine } from "react-icons/ri";
+import { RiFileEditFill } from "react-icons/ri";
 import { AiFillCheckCircle, AiFillCloseCircle } from "react-icons/ai";
 
 function ToDoItem(props) {
@@ -25,6 +25,19 @@ function ToDoItem(props) {
           onClick={() => {
             // console.log("Saya mau menghapus ", props.id);
             props.onRemove(props.id);
+          }}
+        />
+        <RiFileEditFill
+          className="edit-icon"
+          onClick={() => {
+            // console.log("Saya mau edit");
+            props.onEdit(
+              props.id,
+              props.todoActivity,
+              props.todoDate,
+              props.todoTimeStart,
+              props.todoTimeEnd
+            );
           }}
         />
         <AiFillCheckCircle
