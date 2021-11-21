@@ -13,6 +13,7 @@ function App() {
       timeStart: "10.00",
       timeEnd: "11.00",
       id: 1,
+      isComplete: false,
     },
     {
       date: new Date(2021, 0, 24),
@@ -20,6 +21,7 @@ function App() {
       timeStart: "20.00",
       timeEnd: "21.00",
       id: 2,
+      isComplete: false,
     },
     {
       date: new Date(2021, 0, 25),
@@ -27,6 +29,7 @@ function App() {
       timeStart: "23.00",
       timeEnd: "24.00",
       id: 3,
+      isComplete: false,
     },
   ];
 
@@ -56,6 +59,18 @@ function App() {
     setTodo(removedArr);
   };
 
+  const completeToDoHandler = (id) => {
+    // console.log("Saya dari App.js, sudah menyelesaikan task ke ", id);
+    let updatedTodos = filteredToDo.map((todo) => {
+      if (todo.id === id) {
+        todo.isComplete = !todo.isComplete;
+        // console.log(todo.id, todo.isComplete);
+      }
+      return todo;
+    });
+    setTodo(updatedTodos);
+  };
+
   return (
     <div className="App">
       <ToDoForm onAddData={addToDoHandler} />
@@ -67,7 +82,11 @@ function App() {
           </p>
         </Card>
       ) : (
-        <ToDoList items={filteredToDo} onRemove={removeTodoHandler} />
+        <ToDoList
+          items={filteredToDo}
+          onRemove={removeTodoHandler}
+          onComplete={completeToDoHandler}
+        />
       )}
     </div>
   );

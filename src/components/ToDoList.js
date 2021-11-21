@@ -13,6 +13,8 @@ function ToDoList(props) {
           key={todoItem.id}
           id={todoItem.id}
           onRemove={props.onRemove}
+          onComplete={props.onComplete}
+          isComplete={todoItem.isComplete}
         />
       ))}
     </Fragment>

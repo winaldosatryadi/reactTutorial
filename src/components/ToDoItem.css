@@ -44,5 +44,14 @@
 }
 
 .delete-icon {
-  color: white;
+  color: rgba(219, 18, 18, 0.7);
+}
+
+.complete-icon {
+  color: rgba(27, 236, 41, 0.7);
+}
+
+.complete {
+  text-decoration: line-through;
+  text-decoration-color: white;
 }

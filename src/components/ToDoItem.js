@@ -2,11 +2,12 @@ import { Date as DateItem } from "./Date";
 
 import "./ToDoItem.css";
 import Card from "./UI/Card";
-import { RiCloseCircleLine } from "react-icons/ri";
+// import { RiCloseCircleLine } from "react-icons/ri";
+import { AiFillCheckCircle, AiFillCloseCircle } from "react-icons/ai";
 
 function ToDoItem(props) {
   return (
-    <Card className="todo-item">
+    <Card className={props.isComplete ? "todo-item complete" : "todo-item"}>
       <DateItem
         tanggal={props.todoDate.getDate()}
         bulan={props.todoDate.toLocaleString("default", { month: "long" })}
@@ -19,11 +20,18 @@ function ToDoItem(props) {
         </div>
       </div>
       <div className="icons">
-        <RiCloseCircleLine
+        <AiFillCloseCircle
           className="delete-icon"
           onClick={() => {
-            console.log("Saya mau menghapus ", props.id);
+            // console.log("Saya mau menghapus ", props.id);
             props.onRemove(props.id);
+          }}
+        />
+        <AiFillCheckCircle
+          className="complete-icon"
+          onClick={() => {
+            // console.log("Saya sudah menyelesaikan ", props.id);
+            props.onComplete(props.id);
           }}
         />
       </div>
