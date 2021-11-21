@@ -31,6 +31,8 @@ const ToDoForm = (props) => {
       date: new Date(enteredDate),
       timeStart: enteredTimeStart,
       timeEnd: enteredTimeEnd,
+      id: Math.floor(Math.random() * 10000),
+      isComplete: false,
     };
 
     setEnteredActivity("");
